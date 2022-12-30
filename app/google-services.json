@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "177494971065",
+    "project_id": "sita1-ba268",
+    "storage_bucket": "sita1-ba268.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177494971065:android:0fa8c37fdb5f4ac6c0c168",
+        "android_client_info": {
+          "package_name": "com.develovit.sita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177494971065-g1h2b6qrr2090gfd10fdffu5fgq10i3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDka_zhzF4x81OCKEdY3IsW1NAValS4XCs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177494971065-g1h2b6qrr2090gfd10fdffu5fgq10i3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

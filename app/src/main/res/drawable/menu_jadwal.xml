@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:id="@+id/menu1"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <padding android:left="2.0dip"
+        android:top="5.0dip"
+        android:right="2.0dip"
+        android:bottom="5.0dip" />
+    <corners
+        android:radius="20dip"
+        />
+
+
+    <solid android:color="#4CB2B6"
+        />
+
+    <gradient
+        android:angle="225"
+        android:endColor="#4cb2b6"
+        android:startColor="#9EE7EA"
+        />
+
+
+</shape>

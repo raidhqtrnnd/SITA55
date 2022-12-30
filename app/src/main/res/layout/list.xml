@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/gradien1"
+        android:orientation="vertical" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Permintaan Tugas Akhir"
+            android:textColor="#000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/profil1"
+                    app:civ_border_color="#555151"
+                    app:civ_border_width="2dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_toEndOf="@id/profile_image"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/judul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Pengembangan Aplikasi Perpustakaan"
+                        android:textColor="#000"
+                        android:textSize="11.5dp"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_sans_extrabold"
+                            android:text="Mahasiswa :  "
+                            android:textColor="#303030"
+                            android:textSize="10.5dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/nama"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_sans_extrabold"
+                            android:text="Silvia"
+                            android:textSize="10.5dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_sans_extrabold"
+                            android:text="Dosen Pembimbing :  "
+                            android:textColor="#303030"
+                            android:textSize="10.5dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dospem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_sans_extrabold"
+                            android:text="Yudi Hermandi, S.Kom, M.Ti"
+                            android:textSize="10.0dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/lihat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/backbtn"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Lihat Permintaan"
+                    android:textColor="#fff"
+                    android:textSize="10dp" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/image"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="25dp"
+                            android:src="@drawable/profil2"
+                            app:civ_border_color="#555151"
+                            app:civ_border_width="2dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_toEndOf="@id/image"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="#000"
+                                android:layout_height="wrap_content"
+                                android:text="Automatisasi Smart Home"/>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="5dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:text="Mahasiswa :  "
+                                    android:textColor="#303030"
+                                    android:textSize="10.5dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:text="Muhammad A R"
+                                    android:textSize="10.5dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:textSize="10.5dp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:textColor="#303030"
+                                    android:layout_height="wrap_content"
+                                    android:text="Dosen Pembimbing :  "/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:textSize="10.0dp"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:layout_height="wrap_content"
+                                    android:text="Yaman Khaeruzzaman, M.Sc"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginRight="25dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/backbtn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="Lihat Permintaan"
+                            android:textColor="#fff"
+                            android:textSize="10dp" />
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/image2"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="25dp"
+                            android:src="@drawable/profil3"
+                            app:civ_border_color="#555151"
+                            app:civ_border_width="2dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_toEndOf="@id/image2"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="#000"
+                                android:layout_height="wrap_content"
+                                android:text="Defined Network (SDN) POX Controller"/>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="5dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:text="Mahasiswa :  "
+                                    android:textColor="#303030"
+                                    android:textSize="10.5dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:text="Bella"
+                                    android:textSize="10.5dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:textSize="10.5dp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:textColor="#303030"
+                                    android:layout_height="wrap_content"
+                                    android:text="Dosen Pembimbing :  "/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:textSize="10.0dp"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:layout_height="wrap_content"
+                                    android:text="Yaman Khaeruzzaman, M.Sc"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginRight="25dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/backbtn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="Lihat Permintaan"
+                            android:textColor="#fff"
+                            android:textSize="10dp" />
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/image3"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="25dp"
+                            android:src="@drawable/profil4"
+                            app:civ_border_color="#555151"
+                            app:civ_border_width="2dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_toEndOf="@id/image3"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:textSize="12.5dp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="#000"
+                                android:layout_height="wrap_content"
+                                android:text="Simulasi Virtual Local Area Network"/>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="5dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:text="Mahasiswa :  "
+                                    android:textColor="#303030"
+                                    android:textSize="10.5dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:text="Bella"
+                                    android:textSize="10.5dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:textSize="10.5dp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:textColor="#303030"
+                                    android:layout_height="wrap_content"
+                                    android:text="Dosen Pembimbing :  "/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:textSize="10.0dp"
+                                    android:fontFamily="@font/nunito_sans_extrabold"
+                                    android:layout_height="wrap_content"
+                                    android:text="Yaman Khaeruzzaman, M.Sc"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginRight="25dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/backbtn"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="Lihat Permintaan"
+                            android:textColor="#fff"
+                            android:textSize="10dp" />
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
