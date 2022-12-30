@@ -52,10 +52,6 @@ public class Login extends AppCompatActivity {
         editpassword = findViewById(R.id.editPassword);
         login_btn = findViewById(R.id.buttonLogin);
 
-        //dummy
-        edittextusername.setText("1811521004");
-        editpassword.setText("123");
-
         String username = edittextusername.getText().toString();
         String password = editpassword.getText().toString();
 
