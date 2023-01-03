@@ -173,10 +173,10 @@
             android:background="@drawable/menu_seminar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.858"
+            app:layout_constraintHorizontal_bias="0.87"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.209">
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.039">
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/Mhs0"
@@ -198,6 +198,7 @@
             android:id="@+id/textView4"
             android:layout_width="58dp"
             android:layout_height="16dp"
+            android:layout_marginTop="-6dp"
             android:text="Seminar"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -206,26 +207,28 @@
             app:layout_constraintHorizontal_bias="0.155"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.109" />
+            app:layout_constraintVertical_bias="0.073" />
+
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="109dp"
-            android:layout_height="21dp"
-            android:text="Permintaan TA"
+            android:layout_width="77dp"
+            android:layout_height="20dp"
+            android:text="Permintaan"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.139"
+            app:layout_constraintHorizontal_bias="0.14"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.398" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.044" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
             android:text="Mahasiswa TA"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -234,12 +237,13 @@
             app:layout_constraintHorizontal_bias="0.864"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.11" />
+            app:layout_constraintVertical_bias="0.073" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
             android:text="Sidang"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -248,13 +252,13 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.109" />
-
+            app:layout_constraintVertical_bias="0.073" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:text="Jadwal Sidang"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -269,6 +273,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:text="Jadwal Seminar"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -288,16 +293,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.162"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.903">
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.142">
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6/12-2022"
-                android:textStyle="italic"
                 android:textColor="@color/white"
+                android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -306,6 +311,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="87dp"
             android:layout_height="81dp"
             android:background="@drawable/menu_seminar"
@@ -313,16 +319,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.129"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.21">
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.045">
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/seminarnotif"
-                android:onClick="seminar0"
                 android:layout_width="60dp"
                 android:layout_height="47dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:onClick="seminar0"
                 android:src="@drawable/ic_baseline_list"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -339,16 +345,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.209">
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:layout_constraintVertical_bias="0.039">
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/sidang0"
-                android:onClick="sidang0"
                 android:layout_width="65dp"
                 android:layout_height="47dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:onClick="sidang0"
                 android:src="@drawable/ic_baseline_list"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -365,8 +371,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.834"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.907">
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.125">
 
             <TextView
                 android:id="@+id/textView8"
@@ -390,16 +396,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.129"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.537">
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.055">
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/ta0"
-                android:onClick="ta0"
                 android:layout_width="57dp"
                 android:layout_height="51dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:onClick="ta0"
                 android:src="@drawable/ic_baseline_permintaan"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -420,8 +426,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.536" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.054" />
 
         <Button
             android:id="@+id/btn_logout"
@@ -433,10 +439,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.441"
             app:layout_constraintStart_toEndOf="@+id/token2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.536" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.054" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

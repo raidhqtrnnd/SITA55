@@ -1,10 +1,12 @@
 package com.develovit.sita.datamodel;
 
+
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse {
+public class LoginResponse{
+
     @SerializedName("authorisation")
-    private Authorisation authorisation;
+    private com.develovit.sita.datamodel.Authorisation authorisation;
 
     @SerializedName("user")
     private User user;
@@ -12,17 +14,13 @@ public class LoginResponse {
     @SerializedName("status")
     private String status;
 
-
-
-    public Authorisation getAuthorisation(){
+    public com.develovit.sita.datamodel.Authorisation getAuthorisation(){
         return authorisation;
     }
 
-    public User getUser(){
-        return user;
-    }
 
-    public String getStatus() {
+
+    public String getStatus(){
         return status;
     }
 }
