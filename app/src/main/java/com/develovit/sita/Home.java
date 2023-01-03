@@ -48,7 +48,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Home extends AppCompatActivity {
     private Button btntrig, btnLogout;
     SharedPreferences sharedPref;
-    private ProgressDialog progressDialog;
+
 
     //
 //    @SuppressLint("UnspecifiedImmutableFlag")
@@ -56,9 +56,6 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading");
-        progressDialog.setCancelable(false);
 
         btntrig = findViewById(R.id.token2);
         btnLogout = findViewById(R.id.btn_logout);
@@ -159,7 +156,7 @@ public class Home extends AppCompatActivity {
 
 
     private void logout() {
-        progressDialog.show();
+
         String API_BASE_URL = "http://ptb-api.husnilkamil.my.id";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_BASE_URL)
@@ -188,13 +185,13 @@ public class Home extends AppCompatActivity {
                 } else {
                     Toast.makeText(Home.this, "Logout gagal", Toast.LENGTH_SHORT).show();
                 }
-                progressDialog.dismiss();
+
             }
 
             @Override
             public void onFailure(Call<LogoutResponse> call, Throwable t) {
                 Toast.makeText(Home.this, "Gagal Logout", Toast.LENGTH_SHORT).show();
-                progressDialog.dismiss();
+
             }
         });
     }

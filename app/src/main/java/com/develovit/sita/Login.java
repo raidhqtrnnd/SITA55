@@ -35,17 +35,20 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading");
-        progressDialog.setCancelable(false);
 
         setContentView(R.layout.activity_login);
 
         login_btn = findViewById(R.id.buttonLogin);
 
-        //login_btn.setOnClickListener(view -> cekLogin());
-        cekLogin();
+        login_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cekLogin();
+            }
+        });
     }
+
+    //198201182008121002
 
     public void cekLogin() {
         edittextusername = findViewById(R.id.editUsername);
@@ -55,54 +58,55 @@ public class Login extends AppCompatActivity {
         String username = edittextusername.getText().toString();
         String password = editpassword.getText().toString();
 
-        login_btn.setOnClickListener(view -> {
-            progressDialog.show();
-            String API_BASE_URL = "http://ptb-api.husnilkamil.my.id";
+        login_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String API_BASE_URL = "http://ptb-api.husnilkamil.my.id";
 
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(API_BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .client(new OkHttpClient.Builder().build())
-                    .build();
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl(API_BASE_URL)
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .client(new OkHttpClient.Builder().build())
+                        .build();
 
-            StoryClient client = retrofit.create(StoryClient.class);
+                StoryClient client = retrofit.create(StoryClient.class);
 
-            Call<LoginResponse> call = client.login(username, password);
+                Call<LoginResponse> call = client.login(username, password);
 
-            call.enqueue(new Callback<LoginResponse>() {
-                @Override
-                public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                call.enqueue(new Callback<LoginResponse>() {
+                    @Override
+                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
-                    if (response.isSuccessful()) {
-                        LoginResponse loginResponse = response.body();
-                        if (loginResponse != null && Objects.equals(loginResponse.getStatus(), "success")) {
-                            Toast.makeText(Login.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
+                        if (response.isSuccessful()) {
+                            LoginResponse loginResponse = response.body();
+                            if (loginResponse != null && Objects.equals(loginResponse.getStatus(), "success")) {
+                                Toast.makeText(Login.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
 
-                            String token = loginResponse.getAuthorisation().getToken();
+                                String token = loginResponse.getAuthorisation().getToken();
 
-                            SharedPreferences sharedPref = getSharedPreferences("Pref", MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPref.edit();
-                            editor.putString("TOKEN", token);
+                                SharedPreferences sharedPref = getSharedPreferences("Pref", MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                editor.putString("TOKEN", token);
 
-                            editor.apply();
+                                editor.apply();
 
 
-                            Intent Intent = new Intent(Login.this, Home.class);
-                            startActivity(Intent);
+                                Intent Intent = new Intent(Login.this, Home.class);
+                                startActivity(Intent);
+                            }
+                        } else {
+                            Log.e("LoginActivity", response.message());
+                            Toast.makeText(Login.this, "Username/password anda salah", Toast.LENGTH_SHORT).show();
                         }
-                    } else {
-                        Log.e("LoginActivity", response.message());
-                        Toast.makeText(Login.this, "Username/password anda salah", Toast.LENGTH_SHORT).show();
                     }
-                    progressDialog.dismiss();
-                }
 
-                @Override
-                public void onFailure(Call<LoginResponse> call, Throwable t) {
-                    Toast.makeText(Login.this, "Gagal login", Toast.LENGTH_SHORT).show();
-                    progressDialog.dismiss();
-                }
-            });
+                    @Override
+                    public void onFailure(Call<LoginResponse> call, Throwable t) {
+                        Toast.makeText(Login.this, "Gagal login", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
         });
     }
 }
+
