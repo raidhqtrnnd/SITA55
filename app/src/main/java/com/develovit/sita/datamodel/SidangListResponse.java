@@ -3,7 +3,7 @@ package com.develovit.sita.datamodel;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class SeminarListResponse{
+public class SidangListResponse {
 
     @SerializedName("seminars")
     private List<SeminarsItem> seminars;
