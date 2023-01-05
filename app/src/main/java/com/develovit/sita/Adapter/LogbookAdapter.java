@@ -9,18 +9,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.develovit.sita.R;
 import com.develovit.sita.Models.Logbook;
 
 public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.CardViewHolder> {
 
-    ArrayList<Logbook> ListLogbook = new ArrayList<>();
+    private List<Logbook> ListLogbook = new ArrayList<>();
 
 
-    public LogbookAdapter(ArrayList<Logbook> listLogbook) {
+    public LogbookAdapter(List<Logbook> listLogbook) {
         ListLogbook = listLogbook;
+        notifyDataSetChanged();
     }
+
+
 
     @NonNull
     @Override
@@ -44,7 +48,7 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.CardView
         return ListLogbook.size();
     }
 
-    public class CardViewHolder extends RecyclerView.ViewHolder {
+    public class CardViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView tglRevisi,ketRevisi,statuslog;
 
@@ -53,6 +57,11 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.CardView
             tglRevisi = view.findViewById(R.id.tglRevisi);
             ketRevisi = view.findViewById(R.id.ketRevisi);
             statuslog = view.findViewById(R.id.statuslog);
+        }
+
+        @Override
+        public void onClick(View v) {
+
         }
     }
 }

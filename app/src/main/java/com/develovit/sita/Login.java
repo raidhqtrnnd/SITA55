@@ -27,6 +27,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Login extends AppCompatActivity {
+
     EditText edittextusername, editpassword;
     Button login_btn;
 
@@ -35,7 +36,6 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_login);
 
         login_btn = findViewById(R.id.buttonLogin);
@@ -83,13 +83,12 @@ public class Login extends AppCompatActivity {
                                 Toast.makeText(Login.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
 
                                 String token = loginResponse.getAuthorisation().getToken();
+                                Log.i("success", token);
 
-                                SharedPreferences sharedPref = getSharedPreferences("Pref", MODE_PRIVATE);
+                                SharedPreferences sharedPref = getSharedPreferences("Pref", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 editor.putString("TOKEN", token);
-
                                 editor.apply();
-
 
                                 Intent Intent = new Intent(Login.this, Home.class);
                                 startActivity(Intent);

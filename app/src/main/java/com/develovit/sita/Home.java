@@ -28,6 +28,7 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.develovit.sita.datamodel.ListTaMhsResponse;
 import com.develovit.sita.datamodel.LoginResponse;
 import com.develovit.sita.datamodel.LogoutResponse;
 import com.develovit.sita.retrofit.StoryClient;
@@ -64,16 +65,22 @@ public class Home extends AppCompatActivity {
 
         sharedPref = getSharedPreferences("Pref", Context.MODE_PRIVATE);
         String token = sharedPref.getString("TOKEN", "");
+        Log.e("token",token);
+
 
         btnLogout.setOnClickListener(v -> {
             logout();
-        });
+        }
+        );
         btnListTaMhs.setOnClickListener(v -> {
-            listTaMahasiswa();
+            //listTaMahasiswa();
+            sharedPref.edit().putString("TOKEN",token).apply();
+            Intent listTa = new Intent(Home.this,ListMahasiswaTa.class);
+            startActivity(listTa);
         });
 
 
-        btntrig.setOnClickListener(view -> {
+        /*btntrig.setOnClickListener(view -> {
             FirebaseMessaging.getInstance().getToken()
                     .addOnCompleteListener(new OnCompleteListener<String>() {
                         @Override
@@ -91,40 +98,36 @@ public class Home extends AppCompatActivity {
                             Toast.makeText(Home.this, token, Toast.LENGTH_SHORT).show();
                         }
                     });
+        *//*notificationManagerMhsTA = NotificationManagerCompat.from(this);
+        createNotificationChannel();
 
+        btntrig = findViewById(R.id.seminarnotif);
+        btntrig.setOnClickListener(new View.OnClickListener() {
 
-//
-//        notificationManagerMhsTA = NotificationManagerCompat.from(this);
-//        createNotificationChannel();
-//
-//        btntrig = findViewById(R.id.seminarnotif);
-//        btntrig.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Intent resultIntent = new Intent(Home.this, Seminarlist.class);
-//                TaskStackBuilder stackBuilder = TaskStackBuilder.create(Home.this);
-//                stackBuilder.addNextIntentWithParentStack(resultIntent);
-//                PendingIntent resultPendingIntent =
-//                        stackBuilder.getPendingIntent(0,
-//                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-//
-//                NotificationCompat.Builder builder = new NotificationCompat.Builder(Home.this, CHANNEL_ID)
-//                        .setSmallIcon(R.drawable.backbtn)
-//                        .setContentTitle("Info Penambahan Seminar")
-//                        .setStyle(new NotificationCompat.BigTextStyle()
-//                                .bigText("Raidha mengajukan permintaan seminar"))
-//                        .setContentIntent(resultPendingIntent)
-//                        .addAction(R.drawable.backbtn, "Lihat", resultPendingIntent)
-//                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-//
-//                notificationManagerMhsTA.notify(115, builder.build());
-//            }
-        });
+            @Override
+            public void onClick(View v) {
+                Intent resultIntent = new Intent(Home.this, Seminarlist.class);
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(Home.this);
+                stackBuilder.addNextIntentWithParentStack(resultIntent);
+                PendingIntent resultPendingIntent =
+                        stackBuilder.getPendingIntent(0,
+                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(Home.this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.backbtn)
+                        .setContentTitle("Info Penambahan Seminar")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText("Raidha mengajukan permintaan seminar"))
+                        .setContentIntent(resultPendingIntent)
+                        .addAction(R.drawable.backbtn, "Lihat", resultPendingIntent)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                notificationManagerMhsTA.notify(115, builder.build());
+            }*//*
+        });*/
     }
-//
-//        notificationManagerMhsTA = NotificationManagerCompat.from(this);
-//        createNotificationChannel();
+
+
 
 
     public void sidang0(View view) {
@@ -147,28 +150,42 @@ public class Home extends AppCompatActivity {
         startActivity(ta0);
     }
 //
-//    private void createNotificationChannel() {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            CharSequence name = "Notifikasi";
-//            String description = "Notifikasi Seminar TA Bertambah";
-//            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-//            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
-//            channel.setDescription(description);
-//            notificationManagerMhsTA.createNotificationChannel(channel);
-//        }
-//    }
+   /* private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Notifikasi";
+            String description = "Notifikasi Seminar TA Bertambah";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            notificationManagerMhsTA.createNotificationChannel(channel);
+        }
+    }*/
 //
-    private void listTaMahasiswa(){
+    /*private void listTaMahasiswa(){
         Config config = new Config();
-        StoryClient client = config.configRetrofit();
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.develovit.sita.SHARED_KEY", MODE_PRIVATE);
+        *//*StoryClient client = config.configRetrofit();
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("Pref", MODE_PRIVATE);
         String getToken = sharedPreferences.getString("token","");
-        String token = "Bearer " + getToken;
+        String token = "Bearer " + getToken;*//*
+        sharedPref = getSharedPreferences("Pref", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN", "");
         Log.e("token",token);
-        Intent listTaMhs = new Intent(Home.this,ListMahasiswaTa.class);
-        startActivity(listTaMhs);
-    }
+        Call<ListTaMhsResponse> call = config.configRetrofit().getTaMhs("TOKEN",);
+        call.enqueue(new Callback<ListTaMhsResponse>() {
+            @Override
+            public void onResponse(Call<ListTaMhsResponse> call, Response<ListTaMhsResponse> response) {
+                Intent listTaMhs = new Intent(Home.this,ListMahasiswaTa.class);
+                startActivity(listTaMhs);
+            }
 
+            @Override
+            public void onFailure(Call<ListTaMhsResponse> call, Throwable t) {
+
+            }
+        });
+
+    }
+*/
     private void logout() {
 
         String API_BASE_URL = "http://ptb-api.husnilkamil.my.id";
@@ -180,7 +197,7 @@ public class Home extends AppCompatActivity {
 
         StoryClient client = retrofit.create(StoryClient.class);
 
-        Call<LogoutResponse> call = client.logout("Bearer" +sharedPref.getString("TOKEN", ""));
+        Call<LogoutResponse> call = client.logout(sharedPref.getString("TOKEN", ""));
 
         call.enqueue(new Callback<LogoutResponse>() {
             @Override

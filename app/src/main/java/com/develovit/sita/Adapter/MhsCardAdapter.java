@@ -1,6 +1,5 @@
 package com.develovit.sita.Adapter;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,20 +7,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.develovit.sita.R;
 import com.develovit.sita.datamodel.ThesesItem;
 
 public class MhsCardAdapter extends RecyclerView.Adapter<MhsCardAdapter.CardViewHolder> {
 
-
-
-    private ArrayList<ThesesItem> thesesItems = new ArrayList<>();
-
+    private List<ThesesItem> thesesItems = new ArrayList<>();
 
     public void setListener(listMhsOnClickListener listener) {
         this.listener = listener;
@@ -29,7 +25,7 @@ public class MhsCardAdapter extends RecyclerView.Adapter<MhsCardAdapter.CardView
 
     listMhsOnClickListener listener;
 
-    public void setTheses(ArrayList<ThesesItem> thesesItems) {
+    public void setTheses(List<ThesesItem> thesesItems) {
         this.thesesItems = thesesItems;
         notifyDataSetChanged();
     }
@@ -57,20 +53,20 @@ public class MhsCardAdapter extends RecyclerView.Adapter<MhsCardAdapter.CardView
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
 
-        ThesesItem agenda = thesesItems.get(position);
-        holder.namaMhs.setText(agenda.getStudentName());
-        holder.nim.setText(agenda.getStudentNim());
-        holder.judulTa.setText((CharSequence) agenda.getTitle());
+        ThesesItem thesesItem = thesesItems.get(position);
+        holder.namaMhs.setText(thesesItem.getStudentName());
+        holder.nim.setText(thesesItem.getStudentNim());
+        holder.judulTa.setText((CharSequence) thesesItem.getTitle());
         holder.dropdown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.listMhsClick(agenda);
+                listener.listMhsClick(thesesItem);
             }
         });
     }
 
     public interface listMhsOnClickListener{
-        void listMhsClick(ThesesItem listAgenda);
+        void listMhsClick(ThesesItem theses);
 
     }
 

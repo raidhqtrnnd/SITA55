@@ -66,7 +66,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Dopsemlist"
+            android:name=".ListMahasiswaTa"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ListLogbook"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DetailMahasiswaTA"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

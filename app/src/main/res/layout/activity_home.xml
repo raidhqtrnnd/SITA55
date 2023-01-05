@@ -427,8 +427,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.441" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.688" />
 
         <Button
             android:id="@+id/btn_logout"
@@ -449,7 +449,6 @@
             android:id="@+id/list_ta_mhs"
             android:layout_width="86dp"
             android:layout_height="78dp"
-            android:layout_marginTop="12dp"
             android:background="@drawable/menu_seminar"
             android:text="List TA"
             android:textColor="@color/white"
@@ -457,8 +456,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
