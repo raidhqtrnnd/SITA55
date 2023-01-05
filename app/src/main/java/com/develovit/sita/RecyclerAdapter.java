@@ -173,6 +173,76 @@ public static class ViewHolder extends RecyclerView.ViewHolder {
 
 
     }
+        //    private void proses(final String id){
+//        String HttpURL = Data.SERVER+"mapwalet2/superadmin/hapus_akun.php";
+//        final ProgressDialog progressDialog = new ProgressDialog(activity);
+//        progressDialog.setMessage("Loading... ");
+//        progressDialog.show();
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpURL,
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        //do stuffs with response of post
+//
+//
+//
+//                        try {
+//                            if (!response.equals("Gagal")) {
+//                                progressDialog.dismiss();
+//                            } else {
+//                                progressDialog.dismiss();
+//                                Toast.makeText(activity,"Gagal menghapus akun", Toast.LENGTH_SHORT).show();
+//
+//                            }
+//                        }catch (Exception e){
+////                            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//                },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        //do stuffs with response erroe
+//                        progressDialog.dismiss();
+//                        Toast.makeText(activity,error.toString(), Toast.LENGTH_LONG).show();
+//
+//                    }
+//                })
+//        {
+//            @Override
+//            protected Map<String, String> getParams(){
+//                Map<String, String> params = new HashMap<String, String>();
+//
+//
+//
+////                tvnama = mBottomSheetDialog.findViewById(R.id.nama);
+////                tvtelepon = mBottomSheetDialog.findViewById(R.id.telepon);
+////                tvtgl_panen = mBottomSheetDialog.findViewById(R.id.tgl_panen);
+////                tvkomposisi = mBottomSheetDialog.findViewById(R.id.komposisi);
+////                tvharga = mBottomSheetDialog.findViewById(R.id.harga);
+////                tvharpapasar = mBottomSheetDialog.findViewById(R.id.psrharga);
+////
+////              String  name = tvnama.getText().toString().trim();
+////                String  telepon = tvtelepon.getText().toString().trim();
+////                String hrgapasar = tvharpapasar.getText().toString().trim();
+////                String  harga = tvharga.getText().toString().trim();
+////                String tgl_panen = tvtgl_panen.getText().toString().trim();
+////                String komposisi = tvkomposisi.getText().toString().trim();
+//
+////                String asal = sp_asal.getSelectedItem().toString();
+////                String tujuan = sp_tujuan.getSelectedItem().toString();
+//
+//                params.put("id_client",id);
+//
+//
+//                return params;
+//            }
+//
+//        };
+//
+//        RequestQueue requestQueue = Volley.newRequestQueue(activity);
+//        requestQueue.add(stringRequest);
+//    }
 }
 
 }
