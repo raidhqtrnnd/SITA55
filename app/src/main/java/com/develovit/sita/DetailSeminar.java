@@ -20,8 +20,8 @@ public class DetailSeminar extends AppCompatActivity {
     private NotificationManagerCompat notificationManagerMhsTA;
     private Button buttonShow;
 
-    String namaMhs, dospeng, judul;
-    TextView textNamaMhsDetail, textDospengDetail, textJudulDetail;
+    String namaMhs4, nimMhs4, judul4, jadwal5, file1;
+    TextView textNamaMhsDetail4,textfile1, jadwaltext, textDospengDetail4, textJudulDetail4,  textJudulabstrak;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,15 +29,29 @@ public class DetailSeminar extends AppCompatActivity {
 
         Intent detailIntent = getIntent();
         if (detailIntent != null) {
-            namaMhs = detailIntent.getStringExtra("NAMA_MHS");
-            textNamaMhsDetail = findViewById(R.id.nama);
-            textNamaMhsDetail.setText(namaMhs);
-            dospeng = detailIntent.getStringExtra("DOSPENG");
-            textDospengDetail = findViewById(R.id.dospem);
-            textDospengDetail.setText(dospeng);
-            judul = detailIntent.getStringExtra("JUDUL");
-            textJudulDetail = findViewById(R.id.judul);
-            textJudulDetail.setText(judul);
+            namaMhs4 = detailIntent.getStringExtra("NAMA_MHS4");
+            textNamaMhsDetail4 = findViewById(R.id.nama4);
+            textNamaMhsDetail4.setText(namaMhs4);
+
+            nimMhs4 = detailIntent.getStringExtra("NIMMHS4");
+            textDospengDetail4 = findViewById(R.id.nimMhs4);
+            textDospengDetail4.setText(nimMhs4);
+
+            judul4 = detailIntent.getStringExtra("JUDUL4");
+            textJudulDetail4 = findViewById(R.id.judul4);
+            textJudulDetail4.setText(judul4);
+
+            judul4 = detailIntent.getStringExtra("JUDUL4");
+            textJudulabstrak = findViewById(R.id.abstrak4);
+            textJudulabstrak.setText(judul4);
+
+            jadwal5= detailIntent.getStringExtra("JADWAL");
+            jadwaltext = findViewById(R.id.jadwal5);
+            jadwaltext.setText(jadwal5);
+
+            file1 = detailIntent.getStringExtra("FILE1");
+            textfile1 = findViewById(R.id.file2);
+            textfile1.setText(file1);
         }
 
 
@@ -57,10 +71,10 @@ public class DetailSeminar extends AppCompatActivity {
                                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(DetailSeminar.this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.backbtn)
-                        .setContentTitle("Info Persetujuan Seminar TA")
+                        .setSmallIcon(R.drawable.ic_baseline_auto_awesome_24)
+                        .setContentTitle("Info Penambahan Dospeng")
                         .setStyle(new NotificationCompat.BigTextStyle()
-                                .bigText("Penambahan Seminar TA disetujui"))
+                                .bigText("Penambahan Dosen Penguji sukses"))
                         .setContentIntent(resultPendingIntent)
                         .addAction(R.drawable.backbtn, "Lihat", resultPendingIntent)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
@@ -74,15 +88,15 @@ public class DetailSeminar extends AppCompatActivity {
 
  }
 
-    public void onButtonKirimClick(View view) {
-        Intent i = new Intent(this, Dopsemlist.class);
-        startActivity(i);
-    }
-
-    public void dospeng(View view) {
-        Intent detailsIntent= new Intent (this, Dopsemlist.class);
-        startActivity(detailsIntent);
-    }
+//    public void onButtonKirimClick(View view) {
+//        Intent i = new Intent(this, Dopsemlist.class);
+//        startActivity(i);
+//    }
+//
+//    public void dospeng(View view) {
+//        Intent detailsIntent= new Intent (this, Dopsemlist.class);
+//        startActivity(detailsIntent);
+//    }
 
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

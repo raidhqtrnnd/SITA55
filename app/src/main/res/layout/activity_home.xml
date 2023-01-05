@@ -62,7 +62,7 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="31dp"
-                    android:src="@drawable/profil2"
+                    android:src="@drawable/husnil"
                     app:civ_border_color="#555151"
                     app:civ_border_width="2dp" />
 
@@ -132,7 +132,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans_extrabold"
-                            android:text="12345678"
+                            android:text="198201182008121002"
                             android:textSize="10.5dp" />
 
                     </LinearLayout>
@@ -418,31 +418,31 @@
             android:id="@+id/token2"
             android:layout_width="86dp"
             android:layout_height="78dp"
-            android:background="@drawable/menu_seminar"
+            android:background="@drawable/button"
             android:text="token"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.867"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.054" />
+            app:layout_constraintVertical_bias="0.059" />
 
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="86dp"
             android:layout_height="78dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/menu_seminar"
             android:text="Logout"
             android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.441"
-            app:layout_constraintStart_toEndOf="@+id/token2"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.054" />
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -20,25 +20,44 @@ public class DetailSidang extends AppCompatActivity {
     private NotificationManagerCompat notificationManagerMhsTA;
     private Button buttonShow;
 
-    String namaMhs1, dospeng1, judul1;
-    TextView textNamaMhsDetail1, textDospengDetail1, textJudulDetail1;
+    String namaMhs1, jadwal3, judul3, nimMhs, file;
+    TextView textNamaMhsDetail1,textfile, textDospengDetail1, textJudulDetail1, textJudulabstrak, textJadwal ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_sidang);
 
+
         Intent detailIntent = getIntent();
         if (detailIntent != null) {
+
             namaMhs1 = detailIntent.getStringExtra("NAMA_MHS1");
             textNamaMhsDetail1 = findViewById(R.id.nama11);
             textNamaMhsDetail1.setText(namaMhs1);
-            dospeng1 = detailIntent.getStringExtra("DOSPENG1");
-            textDospengDetail1 = findViewById(R.id.dospem11);
-            textDospengDetail1.setText(dospeng1);
-            judul1 = detailIntent.getStringExtra("JUDUL1");
+
+            nimMhs = detailIntent.getStringExtra("NIMMHS");
+            textDospengDetail1 = findViewById(R.id.nimMhs11);
+            textDospengDetail1.setText(nimMhs);
+
+            judul3 = detailIntent.getStringExtra("JUDUL");
             textJudulDetail1 = findViewById(R.id.judul11);
-            textJudulDetail1.setText(judul1);
+            textJudulDetail1.setText(judul3);
+
+            judul3 = detailIntent.getStringExtra("JUDUL");
+            textJudulabstrak = findViewById(R.id.abstrak);
+            textJudulabstrak.setText(judul3);
+
+            jadwal3 = detailIntent.getStringExtra("JADWAL");
+            textJadwal = findViewById(R.id.jadwal4);
+            textJadwal.setText(jadwal3);
+
+            file = detailIntent.getStringExtra("FILE");
+            textfile = findViewById(R.id.file1);
+            textfile.setText(file);
+
+
+
         }
 
 
@@ -77,10 +96,10 @@ public class DetailSidang extends AppCompatActivity {
 
 
 
-    public void dospeng(View view) {
-        Intent dospenglist= new Intent (this, Dopsemlist.class);
-        startActivity(dospenglist);
-    }
+//    public void dospeng(View view) {
+//        Intent dospenglist= new Intent (this, Dopsemlist.class);
+//        startActivity(dospenglist);
+//    }
 
 //    private void createNotificationChannel() {
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
