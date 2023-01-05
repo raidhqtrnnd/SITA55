@@ -1,5 +1,8 @@
 package com.develovit.sita.retrofit;
 
+import com.develovit.sita.datamodel.DetailMhsTaResponse;
+import com.develovit.sita.datamodel.ListLogbookResponse;
+import com.develovit.sita.datamodel.ListTaMhsResponse;
 import com.develovit.sita.datamodel.LoginResponse;
 import com.develovit.sita.datamodel.LogoutResponse;
 import com.develovit.sita.datamodel.ProfilResponse;
@@ -43,5 +46,13 @@ public interface StoryClient {
     @POST("/api/logout")
     Call<LogoutResponse> logout(@Header("Authorization") String token);
 
+    @GET("/api/admin/theses")
+    Call<ListTaMhsResponse> getTaMhs(@Header("Authorization") String token);
 
+    //UNTUK DETAIL TA MAHASISWA YANG DIAKSES DARI LIST TA MAHASISWA (DENGAN TOMBOL LOGBOOK)
+    @GET("/api/theses/309")
+    Call<DetailMhsTaResponse> detailTa(@Header("Authorization") String token);
+
+    @GET("/api/theses/309/logbooks")
+    Call<ListLogbookResponse> logBook(@Header("Authorization") String token);
 }
