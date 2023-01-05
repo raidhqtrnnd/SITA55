@@ -76,7 +76,7 @@
                     android:layout_height="70dp"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="25dp"
-                    android:src="@drawable/profil1"
+                    android:src="@drawable/profil_default"
                     app:civ_border_color="#555151"
                     app:civ_border_width="2dp" />
 
@@ -293,6 +293,7 @@
 
 
 <Button
+    android:id="@+id/notifseminar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tambah Penguji"
@@ -300,17 +301,6 @@
             android:layout_marginLeft="3dp"
             android:background="@drawable/backbtn"
             android:textColor="#fff"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/notifseminar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Setujui"
-            android:onClick="dospeng"
-            android:layout_marginLeft="3dp"
-            android:background="@drawable/backbtn2"
-            android:textColor="@color/black"
             android:layout_weight="1"/>
 
 

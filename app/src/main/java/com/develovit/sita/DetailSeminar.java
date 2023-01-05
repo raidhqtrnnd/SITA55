@@ -71,10 +71,10 @@ public class DetailSeminar extends AppCompatActivity {
                                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(DetailSeminar.this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.backbtn)
-                        .setContentTitle("Info Persetujuan Seminar TA")
+                        .setSmallIcon(R.drawable.ic_baseline_auto_awesome_24)
+                        .setContentTitle("Info Penambahan Dospeng")
                         .setStyle(new NotificationCompat.BigTextStyle()
-                                .bigText("Penambahan Seminar TA disetujui"))
+                                .bigText("Penambahan Dosen Penguji sukses"))
                         .setContentIntent(resultPendingIntent)
                         .addAction(R.drawable.backbtn, "Lihat", resultPendingIntent)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
