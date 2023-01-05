@@ -47,6 +47,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Home extends AppCompatActivity {
     private Button btntrig, btnLogout;
+    private Button btnListTaMhs;
     SharedPreferences sharedPref;
 
 
@@ -59,12 +60,16 @@ public class Home extends AppCompatActivity {
 
         btntrig = findViewById(R.id.token2);
         btnLogout = findViewById(R.id.btn_logout);
+        btnListTaMhs = findViewById(R.id.list_ta_mhs);
 
         sharedPref = getSharedPreferences("Pref", Context.MODE_PRIVATE);
         String token = sharedPref.getString("TOKEN", "");
 
         btnLogout.setOnClickListener(v -> {
             logout();
+        });
+        btnListTaMhs.setOnClickListener(v -> {
+            listTaMahasiswa();
         });
 
 
@@ -153,7 +158,16 @@ public class Home extends AppCompatActivity {
 //        }
 //    }
 //
-
+    private void listTaMahasiswa(){
+        Config config = new Config();
+        StoryClient client = config.configRetrofit();
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.develovit.sita.SHARED_KEY", MODE_PRIVATE);
+        String getToken = sharedPreferences.getString("token","");
+        String token = "Bearer " + getToken;
+        Log.e("token",token);
+        Intent listTaMhs = new Intent(Home.this,ListMahasiswaTa.class);
+        startActivity(listTaMhs);
+    }
 
     private void logout() {
 
