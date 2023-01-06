@@ -1,6 +1,7 @@
 package com.develovit.sita;
 
 import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
 
 public class DataRecyclerView {
 
