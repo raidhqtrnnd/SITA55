@@ -1,12 +1,12 @@
 package com.develovit.sita;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class JadwalSidang extends AppCompatActivity {
@@ -32,7 +32,7 @@ public class JadwalSidang extends AppCompatActivity {
             }
         });
 
- /*     Bundle bundle = getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();
 
         judul.setText(bundle.getString("judul"));
         nama.setText(bundle.getString("nama"));
@@ -43,6 +43,6 @@ public class JadwalSidang extends AppCompatActivity {
 
         }else {
             image.setImageDrawable(getResources().getDrawable(R.drawable.profil2));
-        }*/
+        }
     }
 }
