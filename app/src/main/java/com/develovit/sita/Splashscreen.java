@@ -28,14 +28,14 @@ public class Splashscreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                SharedPreferences sharedPref = getSharedPreferences("Pref", MODE_PRIVATE);
-                if (!sharedPref.getString("TOKEN", "").isEmpty()) {
-                    Intent Intent = new Intent(getApplicationContext(), Home.class);
+/*                SharedPreferences sharedPref = getSharedPreferences("Pref", MODE_PRIVATE);
+                if (!sharedPref.getString("TOKEN", "").isEmpty()) {*/
+                    Intent Intent = new Intent(getApplicationContext(), Login.class);
                     startActivity(Intent);
-                }else{
+/*                }else{
                     startActivity(new Intent(getApplicationContext(), Login.class));
                     finish();
-                }
+                }*/
             }
         }, 3000L); //3000 L = 3 detik
     }

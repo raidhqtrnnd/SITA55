@@ -66,6 +66,7 @@ public class Home extends AppCompatActivity {
         sharedPref = getSharedPreferences("Pref", Context.MODE_PRIVATE);
         String token = sharedPref.getString("TOKEN", "");
         Log.e("token",token);
+        //Toast.makeText(Home.this, "HOME "+token, Toast.LENGTH_SHORT).show();
 
 
         btnLogout.setOnClickListener(v -> {

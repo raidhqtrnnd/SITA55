@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -57,20 +58,23 @@ public class ListMahasiswaTa extends AppCompatActivity
                 .build();
         StoryClient client = retrofit.create(StoryClient.class);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("com.develovit.sita.SHARED_KEY", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("Pref", Context.MODE_PRIVATE);
         getToken = sharedPreferences.getString("TOKEN","");
         token = "Bearer " + getToken;
         Log.e("token",token);
+        //Toast.makeText(ListMahasiswaTa.this,"List" + token, Toast.LENGTH_SHORT).show();
+
+
 
         Call<ListTaMhsResponse> call = client.getTaMhs(token);
         call.enqueue(new Callback<ListTaMhsResponse>() {
             @Override
             public void onResponse(Call<ListTaMhsResponse> call, Response<ListTaMhsResponse> response) {
-                ListTaMhsResponse taMhsResponse = response.body();
                 Log.e("suc", response.toString());
+                ListTaMhsResponse taMhsResponse = response.body();
                 if (taMhsResponse!=null){
                     List<ThesesItem> theses = taMhsResponse.getTheses();
-                    mhsCardAdapter.setTheses((List<ThesesItem>)theses);
+                    mhsCardAdapter.setTheses(theses);
                 }
             }
 
@@ -84,7 +88,20 @@ public class ListMahasiswaTa extends AppCompatActivity
 
     }
 
-    /*public ArrayList<ListMhsTa> getListMhstTA() {
+
+    @Override
+    public void listMhsClick(ThesesItem thesesItem) {
+        Intent intent = new Intent(ListMahasiswaTa.this, DetailMahasiswaTA.class);
+        intent.putExtra("id",thesesItem.getStudentId());
+        /*intent.putExtra("nama",thesesItem.getStudentName());
+        intent.putExtra("judul",thesesItem.getTitle());*/
+
+        startActivity(intent);
+    }
+
+
+}
+/*public ArrayList<ListMhsTa> getListMhstTA() {
         ArrayList<ListMhsTa> listMhsTA = new ArrayList<>();
         listMhsTA.add(new ListMhsTa(
                 "Raidha Qatrunnada",
@@ -148,12 +165,3 @@ public class ListMahasiswaTa extends AppCompatActivity
         ));
         return listMhsTA;
     }*/
-
-
-    @Override
-    public void listMhsClick(ThesesItem listAgenda) {
-        Intent intent = new Intent(ListMahasiswaTa.this, DetailMahasiswaTA.class);
-        intent.putExtra("nama",listAgenda.getStudentName());
-        startActivity(intent);
-    }
-}

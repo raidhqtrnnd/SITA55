@@ -17,6 +17,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface StoryClient {
 
@@ -50,9 +51,9 @@ public interface StoryClient {
     Call<ListTaMhsResponse> getTaMhs(@Header("Authorization") String token);
 
     //UNTUK DETAIL TA MAHASISWA YANG DIAKSES DARI LIST TA MAHASISWA (DENGAN TOMBOL LOGBOOK)
-    @GET("/api/theses/309")
-    Call<DetailMhsTaResponse> detailTa(@Header("Authorization") String token);
+    @GET("/api/theses/{id}")
+    Call<DetailMhsTaResponse> detailTa(@Header("Authorization") String token,@Path("id") int id);
 
-    @GET("/api/theses/309/logbooks")
-    Call<ListLogbookResponse> logBook(@Header("Authorization") String token);
+    @GET("/api/theses/{id}/logbooks")
+    Call<ListLogbookResponse> logBook(@Header("Authorization") String token,@Path("id") int id);
 }

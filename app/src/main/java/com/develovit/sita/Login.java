@@ -76,9 +76,11 @@ public class Login extends AppCompatActivity {
                 call.enqueue(new Callback<LoginResponse>() {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                        LoginResponse loginResponse = response.body();
 
-                        if (response.isSuccessful()) {
-                            LoginResponse loginResponse = response.body();
+
+                       /* if (loginResponse.getStatus()!="") {*/
+
                             if (loginResponse != null && Objects.equals(loginResponse.getStatus(), "success")) {
                                 Toast.makeText(Login.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
 
@@ -89,11 +91,12 @@ public class Login extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 editor.putString("TOKEN", token);
                                 editor.apply();
+                                Toast.makeText(Login.this, token, Toast.LENGTH_SHORT).show();
 
                                 Intent Intent = new Intent(Login.this, Home.class);
                                 startActivity(Intent);
                             }
-                        } else {
+                       /* } */else {
                             Log.e("LoginActivity", response.message());
                             Toast.makeText(Login.this, "Username/password anda salah", Toast.LENGTH_SHORT).show();
                         }

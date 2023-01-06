@@ -65,14 +65,15 @@ public class MhsCardAdapter extends RecyclerView.Adapter<MhsCardAdapter.CardView
         });
     }
 
-    public interface listMhsOnClickListener{
-        void listMhsClick(ThesesItem theses);
-
-    }
-
     @Override
     public int getItemCount() {
         return thesesItems.size();
+    }
+
+    public interface listMhsOnClickListener{
+
+        void listMhsClick(ThesesItem theses);
+
     }
 
     public class CardViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{

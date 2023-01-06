@@ -10,11 +10,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
     public class Config {
 
-        private String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
+        private static String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
         public static final Integer SUCCESS_RESULT = 1;
         public static final Integer FAILURE_RESULT = 0;
 
-        public StoryClient configRetrofit() {
+        public static StoryClient configRetrofit() {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(API_BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
